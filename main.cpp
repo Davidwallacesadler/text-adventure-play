@@ -25,13 +25,90 @@ struct StoryBeat {
     std::string narrative_block;
     
     // array of actions for the beat
-    StoryAction actions[]; 
+    StoryAction actions[3];
 };
 
-StoryBeat story_beats[]{
-    StoryBeat{} // TODO: we need to create constructors (think swift init) for StoryBeat & StoryAction
+StoryBeat mark_beats[]{
+    StoryBeat{
+        "MARK-1",
+        R"(
+        .:::::::.
+      .'     ':::
+      :        ::.
+      :-  --   ' :
+      :        ..:
+      :.--    .'::;
+      ::.__ .'  ':;_
+      ::/""".    .' ""-._
+      ::\   |   :        :
+     .:::  .'..'          '
+    . :'  .         '     ':
+    : '  .:        .     . .
+    :'   .:        :    .:  "--__
+   /'   .::        :   .
+  _: . ::::        '   .
+.'    '-----------:   .
+ :                    '---''--'--
+    )",
+    R"(
+Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. 
+Behind her are floor toceiling windows.
+I start to glance around the room. 
+A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall.
+I wonder where the door leads, whether or not it's an emergency exit. 
+Aren't those marked EMERGENCY EXIT?
+)",
+   {
+    {"Check phone", "1", "mark-1-1"},
+    {"Look at ceiling", "2", "mark-1-2"},
+    {"Listen to the receptionist", "3", "mark-1-3"}
+   }
+    },
+    StoryBeat{
+        "mark-1-1",
+        R"(
+        .:::::::.
+      .'     ':::
+      :        ::.
+      :**  **  ' :
+      :        ..:
+      :.--    .'::;
+      ::.__ .'  ':;_
+      ::/""".    .' ""-._
+      ::\   |   :        :
+     .:::  .'..'          '
+    . :'  .         '     ':
+    : '  .:        .     . .
+    :'   .:        :    .:  "--__
+   /'   .::        :   .
+  _: . ::::        '   .
+.'    '-----------:   .
+ :                    '---''--'--
+    )",
+    R"(
+This is the second beat after choosing check phone
+)",
+   {
+    {"Keep scrolling", "1", "???"},
+    {"Respond to text message", "2", "???"},
+    {"Open Youtube", "3", "???"}
+   }
+    }
     // TODO: we need to turn our current text in main into story beats inside array
 };
+
+bool validate_input(std::string input) {
+    std::string valid_selections[]{"1", "2", "3"};
+    bool is_valid = false;
+    for (int i = 0; i < 3; i++) {
+        std::string selection = valid_selections[i];
+        if (input == selection) {
+            is_valid = true;
+            break;
+        }
+    }
+    return is_valid;
+}
 
 int main() 
 {
@@ -74,100 +151,173 @@ int main()
         return EXIT_FAILURE;
     }
 
-    // d. Print the name name of the character that was selected
-    std::cout << "\n";
-    std::cout << "You've selected: ";
+    StoryBeat current_beat;
+    bool has_story_ended = false;
+    std::string action_selection = "";
+
     if (character_selection == "1") {
-        std::cout << "Mark\n";
+        // current_beat = find the story beat where id == "mark01"
+        current_beat = mark_beats[0];
     } else if (character_selection == "2") {
-        std::cout << "Alma\n";
+        // current_beat = alma_beats[0];
     } else {
-        std::cout << "Stephanie\n";
+        // current_beat = steph_beats[0];
     }
 
-    // 2. Display Initial writing and options for Mark
-    // a. Gather writing and get idea what we want to print out
-    // b. Define actions -- check phone, blah.
-    // c. Get user input
-    // d. based on that go down different narrative path
+    // GAME LOOP
+    while(!has_story_ended) {
+        std::cout << current_beat.ascii_image << "\n\n";
 
-    // a. Print ascii image for the selected character (Mark)
-    std::string ascii = R"(
-        .:::::::.
-      .'     ':::
-      :        ::.
-      :-  --   ' :
-      :        ..:
-      :.--    .'::;
-      ::.__ .'  ':;_
-      ::/""".    .' ""-._
-      ::\   |   :        :
-     .:::  .'..'          '
-    . :'  .         '     ':
-    : '  .:        .     . .
-    :'   .:        :    .:  "--__
-   /'   .::        :   .
-  _: . ::::        '   .
-.'    '-----------:   .
- :                    '---''--'--
-    )";
+        std::cout << current_beat.narrative_block << "\n\n";
 
-    std::cout << ascii;
-    std::cout << "\n";
+        std::cout << "What do you do? \n";
 
-    // b. Initial text for Mark
-    std::cout << "I sit down on the hard chair in the waiting room, out of breath and lean my cane against the wall behind me.";
-    std::cout << "\n";
+        for (int i = 0; i < 3; i++) {
+            StoryAction action = current_beat.actions[i];
 
-    std::string mark_one = R"(
-Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. 
-Behind her are floor toceiling windows.
-I start to glance around the room. 
-A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall.
-I wonder where the door leads, whether or not it's an emergency exit. 
-Aren't those marked EMERGENCY EXIT?
-)"; 
-    std::cout << mark_one;
-    std::cout << "\n";
-
-    // c. Define and present actions
-
-    std::cout << "What do you do?\n";
-
-    std::cout << "\n";
-
-    std::cout << "1 - Check phone\n";
-    std::cout << "2 - Look at ceiling\n";
-    std::cout << "3 - Listen to the receiptionists\n";
-
-    std::cout << "\n";
-    std::cout << "Enter the number: ";
-
-    std::string action_selection;
-    std::cin >> action_selection;
-
-    bool is_action_valid = false;
-    for (int i = 0; i < 3; i++) {
-        std::string selection = valid_selections[i];
-        if (action_selection == selection) {
-            is_action_valid = true;
-            break;
+            std::cout << action.number << " - " << action.display_text << "\n";
         }
-    }
-    if (!is_action_valid) {
-        std::cout << "YOU MESSED UP\n";
-        return EXIT_FAILURE;
+
+        // LOOP
+        while (!validate_input(action_selection)) {
+            std::cin >> action_selection;
+        }
+
+        std::cout << "SELECTION VALID!! " << action_selection << "\n";
+
+        // Find the selected action OBJECT based on the string entered ("1", "2", or "3")
+        StoryAction selected_action;
+        for (int i = 0; i < 3; i++) {
+            StoryAction action = current_beat.actions[i];
+            if (action.number == action_selection) {
+                selected_action = action;
+            }
+        }
+
+        // Set the currentBeat to the next one by looping over the story beats and finding the one with the id that matches the selected action next_beat_id
+        bool did_find_next_beat = false;
+        for (int i = 0; i < 2; i++) {
+            StoryBeat story_beat = mark_beats[i];
+
+            if (story_beat.id == selected_action.next_beat_id) {
+                current_beat = story_beat;
+                did_find_next_beat = true;
+            }
+        }
+
+        if (!did_find_next_beat) {
+            std::cout << "HEY NARRATIVE DESIGNER -- THIS IS BROKEN -- NO NEXT BEAT!!!" << "\n";
+            has_story_ended = true;
+            // return EXIT_FAILURE;
+        }
+
+        // Clear the selected action
+        action_selection = "";
     }
 
-    std::cout << "\n";
-    std::cout << "You've selected: ";
-    if (action_selection == "1") {
-        std::cout << "Check phone\n";
-    } else if (action_selection == "2") {
-        std::cout << "Look at ceiling\n";
-    } else {
-        std::cout << "Listen to the receiptionists\n";
-    }
+    
+
+
+
+    
+
+
+
+
+    // d. Print the name name of the character that was selected
+//     std::cout << "\n";
+//     std::cout << "You've selected: ";
+//     if (character_selection == "1") {
+//         std::cout << "Mark\n";
+//     } else if (character_selection == "2") {
+//         std::cout << "Alma\n";
+//     } else {
+//         std::cout << "Stephanie\n";
+//     }
+
+//     // 2. Display Initial writing and options for Mark
+//     // a. Gather writing and get idea what we want to print out
+//     // b. Define actions -- check phone, blah.
+//     // c. Get user input
+//     // d. based on that go down different narrative path
+
+//     // a. Print ascii image for the selected character (Mark)
+//     std::string ascii = R"(
+//         .:::::::.
+//       .'     ':::
+//       :        ::.
+//       :-  --   ' :
+//       :        ..:
+//       :.--    .'::;
+//       ::.__ .'  ':;_
+//       ::/""".    .' ""-._
+//       ::\   |   :        :
+//      .:::  .'..'          '
+//     . :'  .         '     ':
+//     : '  .:        .     . .
+//     :'   .:        :    .:  "--__
+//    /'   .::        :   .
+//   _: . ::::        '   .
+// .'    '-----------:   .
+//  :                    '---''--'--
+//     )";
+
+//     std::cout << ascii;
+//     std::cout << "\n";
+
+//     // b. Initial text for Mark
+//     std::cout << "I sit down on the hard chair in the waiting room, out of breath and lean my cane against the wall behind me.";
+//     std::cout << "\n";
+
+//     std::string mark_one = R"(
+// Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. 
+// Behind her are floor toceiling windows.
+// I start to glance around the room. 
+// A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall.
+// I wonder where the door leads, whether or not it's an emergency exit. 
+// Aren't those marked EMERGENCY EXIT?
+// )"; 
+//     std::cout << mark_one;
+//     std::cout << "\n";
+
+//     // c. Define and present actions
+
+//     std::cout << "What do you do?\n";
+
+//     std::cout << "\n";
+
+//     std::cout << "1 - Check phone\n";
+//     std::cout << "2 - Look at ceiling\n";
+//     std::cout << "3 - Listen to the receiptionists\n";
+
+//     std::cout << "\n";
+//     std::cout << "Enter the number: ";
+
+//     std::string action_selection;
+//     std::cin >> action_selection;
+
+//     bool is_action_valid = false;
+//     for (int i = 0; i < 3; i++) {
+//         std::string selection = valid_selections[i];
+//         if (action_selection == selection) {
+//             is_action_valid = true;
+//             break;
+//         }
+//     }
+//     if (!is_action_valid) {
+//         std::cout << "YOU MESSED UP\n";
+//         return EXIT_FAILURE;
+//     }
+
+//     std::cout << "\n";
+//     std::cout << "You've selected: ";
+//     if (action_selection == "1") {
+//         std::cout << "Check phone\n";
+//     } else if (action_selection == "2") {
+//         std::cout << "Look at ceiling\n";
+//     } else {
+//         std::cout << "Listen to the receiptionists\n";
+//     }
 
     
 
