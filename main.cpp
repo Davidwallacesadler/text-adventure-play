@@ -180,6 +180,7 @@ int main()
 
         // LOOP
         while (!validate_input(action_selection)) {
+            std::cout << "Enter the number: ";
             std::cin >> action_selection;
         }
 
@@ -191,6 +192,7 @@ int main()
             StoryAction action = current_beat.actions[i];
             if (action.number == action_selection) {
                 selected_action = action;
+                break;
             }
         }
 
@@ -202,11 +204,13 @@ int main()
             if (story_beat.id == selected_action.next_beat_id) {
                 current_beat = story_beat;
                 did_find_next_beat = true;
+                break;
             }
         }
 
         if (!did_find_next_beat) {
             std::cout << "HEY NARRATIVE DESIGNER -- THIS IS BROKEN -- NO NEXT BEAT!!!" << "\n";
+            // EXIT GAME LOOP
             has_story_ended = true;
             // return EXIT_FAILURE;
         }
