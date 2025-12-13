@@ -1,0 +1,24 @@
+Each character story file contains a large list of story beats each separated by "---" (3 dashes) on a new line.
+
+Each story beat consists of:
+- id: The String id of the beat
+- ascci: The ascci art to be displayed for the beat
+- text: The text to be displayed below the ascci art
+- actions: The actions the user can take and the next associated beat id 
+
+Each property name is followed by a colon and the value for the property begins on the next line.
+If the value goes onto multiple lines, the value end is marked with a "@" (at symbol).
+
+The file should follow this general format:
+id:
+ID_VALUE_HERE
+ascci:
+ASCCI_ART_HERE
+@
+text:
+TEXT_VALUE_HERE
+@
+actoions:
+ACTION_1_TEXT -> ACTION_1_NEXT_ID
+ACTION_2_TEXT -> ACTION_2_NEXT_ID
+ACTION_3_TEXT -> ACTION_3_NEXT_ID

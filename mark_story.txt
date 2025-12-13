@@ -1,0 +1,52 @@
+id:
+M-1
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. Behind her are floor toceiling windows. I start to glance around the room. A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall. I wonder where the door leads, whether or not it's an emergency exit. Aren't those marked EMERGENCY EXIT?
+@
+actions:
+Check phone -> M-1-1
+Look at ceiling -> M-1-2
+Listen to receptionist -> M-1-3
+---
+id:
+M-1-1
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. Behind her are floor toceiling windows. I start to glance around the room. A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall. I wonder where the door leads, whether or not it's an emergency exit. Aren't those marked EMERGENCY EXIT?
+@
+actions:
+Check phone -> M-1-1-1
+Look at ceiling -> M-1-1-2
+Listen to receptionist -> M-1-1-2
+---

@@ -28,6 +28,7 @@ struct StoryBeat {
     StoryAction actions[3];
 };
 
+// TODO: Replace this array with beats read from mark_story.txt :)
 StoryBeat mark_beats[]{
     StoryBeat{
         "MARK-1",
