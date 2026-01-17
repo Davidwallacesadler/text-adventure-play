@@ -1,20 +1,19 @@
 id:
 START
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::\           :
-	 :  ' \  --  _ --:
-	 _\..  \ _. / \._:
-	"    '. ////   ' \
-	       """\.____./ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+    | |          .....             | | 
+    | |      .:::::::::.           | |
+    | |	    :::'       ':          | | 
+    | |   .::\           \         | |
+    | |  (( ' \  --  _ - (         | |
+    | |  _\:.  \ _. / \._/         | |
+    | |.:   |  ////     \          | | 
+    | /  \   \("""\      )         | |
+    ||'.  \    \   \---./ .        | |
+    /   '.:.   /  / :  '. '.       | | 
+   |        :.----.    |   |       | |.:'
+  |        /    /  /  |    |     .:' 
+  |       /    /  /  /     :  .:' 
 @
 text:
 Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. Behind her are floor toceiling windows. I start to glance around the room. A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall. I wonder where the door leads, whether or not it's an emergency exit. Aren't those marked EMERGENCY EXIT?
@@ -32,13 +31,13 @@ ascci:
               |.----.    |              
             __||    |    |              
             \_|:____:    |\             
-              | _   ._.  | \.__         
+              | _   __   | \.__         
             __||_| |\  \__.    \        
             \ | _   _\.__  \/   \       
-             .||_| |_|   \  \_   ;      
+             _||_| |_|   \  \_   ;      
              \|          |    |   )     
               |__________:        :     
-                ^^       \         \    
+                ^^      \         \    
 @
 text:
 I pull out my phone and check the time: 11:20pm. I'm late. There are multiple unread texts, 3 missed calls, and 1 voicemail. 
@@ -51,20 +50,18 @@ Ignore, put phone back in pocket -> IGNORE_VOICEMAIL_AND_TEXTS
 id:
 CHECK_VOICEMAIL
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::            :
-	 :  '    --    --:
-	 _\..    __   |  :
-	"    '. ////  --.'
-	       """\.__.'_ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+               __________               
+              [  \____/  ]              
+              | _        |              
+            __|[_] ===== |              
+            \_| _        |\             
+              |[_] =__== | \._.         
+            __| _   \  \__.    \        
+            \ |[_] ==\.__  \/   \       
+             _| _        \  \_   ;      
+             \|[_] ===== |    ,   )     
+              |__________:        :     
+                ^^      \          \    
 @
 text:
 I open my voicemail and briefly scan the transcript for the new message, making out the phrase "overdue invoice". Shit, collections. Underneath, my eyes rest on an older voicemail transcript I can't delete.
@@ -156,20 +153,18 @@ Eavesdrop on receptionists -> LISTEN_TO_RECEPTIONIST
 id:
 OPEN_TEXTS
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::            :
-	 :  '    --    --:
-	 _\..    __   |  :
-	"    '. ////  --.'
-	       """\.__.'_ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+               __________               
+              [  \____/  ]              
+              |   .--.   |              
+            __|   :__:   |              
+            \_| _        |\             
+              ||_| =__== | \._.         
+            __| _   \  \__.    \        
+            \ ||_| ==\.__  \/   \       
+             _| _        \  \_   ;      
+             \||_| ===== |    ,   )     
+              |__________:        :     
+                ^^      \          \    
 @
 text:
 I see texts from Maria & Elliot. There are unopened political spam texts asking for donations & a text from an unknown number. 
@@ -182,20 +177,18 @@ Open text from unknown number -> OPEN_UNKNOWN_TEXT
 id:
 OPEN_MARIA_TEXT
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::            :
-	 :  '    --    --:
-	 _\..    __   |  :
-	"    '. ////  --.'
-	       """\.__.'_ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+               __________               
+              [  \____/  ]              
+              | [[[[]]]  |              
+            __|          | _.           
+            \_|   [[[]]] |/ |           
+              |   [[[]]] |\ =\          
+            __|          | \  |\.       
+            \ |     [[]] |/'   )|       
+             _|          (    '  \      
+             \| [[]]]]   |        )     
+              |__________:\       \     
+                ^^       \ ':.     \    
 @
 text:
 I open the message from Maria. It reads: 
@@ -238,20 +231,18 @@ TODO -> TODO
 id:
 OPEN_UNKNOWN_TEXT
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::            :
-	 :  '    --    --:
-	 _\..    __   |  :
-	"    '. ////  --.'
-	       """\.__.'_ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+               __________               
+              [  \____/  ]              
+              |          |              
+            __|          | _.           
+            \_|          |/ |           
+              | [[[[]]]] |\ =\          
+            __|    |     | \  |\.       
+            \ |  .----.  |/'   )|       
+             _|  ======  |(    '  \      
+             \|  '----'  |        )     
+              |__________:\       \     
+                ^^       \ ':.     \       
 @
 text:
 The preview of the message from the unknown number displays:
