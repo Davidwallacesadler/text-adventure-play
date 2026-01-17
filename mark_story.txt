@@ -1,5 +1,5 @@
 id:
-M-1
+START
 ascci:
 		    
 	     .::::::::::.
@@ -20,12 +20,12 @@ text:
 Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. Behind her are floor toceiling windows. I start to glance around the room. A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall. I wonder where the door leads, whether or not it's an emergency exit. Aren't those marked EMERGENCY EXIT?
 @
 actions:
-Check phone -> M-1-1
-Look at ceiling -> M-1-2
-Listen to receptionist -> M-1-3
+Check phone -> CHECK_PHONE
+Look at ceiling -> LOOK_AT_CEILING
+Listen to receptionist -> LISTEN_TO_RECEPTIONIST
 ---
 id:
-M-1-1
+CHECK_PHONE
 ascci:
 		    
 	     .::::::::::.
@@ -43,10 +43,306 @@ ascci:
 				   
 @
 text:
-Across from me sits a woman, about my age, young, early-thirties, who hasn't looked up from her phone. Behind her are floor toceiling windows. I start to glance around the room. A frost-tinted glass door reads NOT AN EXIT, a fire extinguisher hangs on a wood paneled wall. I wonder where the door leads, whether or not it's an emergency exit. Aren't those marked EMERGENCY EXIT?
+I pull out my phone and check the time: 11:20pm. I'm late. There are multiple unread texts, 3 missed calls, and 1 voicemail. 
 @
 actions:
-Check phone -> M-1-1-1
-Look at ceiling -> M-1-1-2
-Listen to receptionist -> M-1-1-2
+Check Voicemail -> CHECK_VOICEMAIL
+Open texts -> OPEN_TEXTS
+Ignore, put phone back in pocket -> IGNORE_VOICEMAIL_AND_TEXTS
+---
+id:
+CHECK_VOICEMAIL
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+I open my voicemail and briefly scan the transcript for the new message, making out the phrase "overdue invoice". Shit, collections. Underneath, my eyes rest on an older voicemail transcript I can't delete.
+@
+actions:
+Listen to new voicemail -> LISTEN_TO_NEW_VOICEMAIL
+Listen to old voicemail -> LISTEN_TO_OLD_VOICEMAIL
+Put phone back in pocket -> PUT_PHONE_BACK_IN_POCKET
+---
+id:
+LISTEN_TO_NEW_VOICEMAIL
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+I press play and hold the phone up to my ear. A tinny automated voice of a woman says (**insert script here: - "Hi [Customer Name], this is [Name] from [Company]. I'm calling about your overdue invoice [Invoice Number] for $[Amount] due on [Due Date]. I wanted to see if there was a reason for the delay and how we might resolve this."**)
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
+---
+id:
+LISTEN_TO_OLD_VOICEMAIL
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+I can't bear to hear her mumbled and too-fast, staccato voice. I read the beginning of the transcript:
+
+Hey Mark, it's me, Alyssa. What have you been doing lately, are you married? I've been trying to get off these medications, it's hard. I miss when we were kids, we used to go exploring. We should do that again soon, go on an adventure...
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
+---
+id:
+PUT_PHONE_BACK_IN_POCKET
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+*You know you should listen to the creditor's message, at least hear the date. You tell yourself you will when you get home. You try to think of the last time you saw her, Alyssa. She was sitting on the porch smoking cigarettes and you think she was awake for days, walking up and down the block, circling the house, smoking pack after pack, the glow of eyes and ends of cigarettes. 
+@
+actions:
+Glance up at ceiling -> LOOK_AT_CEILING
+Eavesdrop on receptionists -> LISTEN_TO_RECEPTIONIST
+---
+id:
+OPEN_TEXTS
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+I see texts from Maria & Elliot. There are unopened political spam texts asking for donations & a text from an unknown number. 
+@
+actions:
+Open text thread from Maria -> OPEN_MARIA_TEXT
+Open text thread from Elliot -> OPEN_ELLIOT_TEXT
+Open text from unknown number -> OPEN_UNKNOWN_TEXT
+---
+id:
+OPEN_MARIA_TEXT
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+I open the message from Maria. It reads: 
+
+i just got back from my doctor's visit, good and bad news. let's chat soon. xx
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
+---
+id:
+OPEN_ELLIOT_TEXT
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+I open the message from Elliot. It reads:
+
+Hey man, the guys and I missed you last night. Hoping you can join us next week.
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
+---
+id:
+OPEN_UNKNOWN_TEXT
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+The preview of the message from the unknown number displays:
+
+I still remember that...
+
+When opened, the text reads: 
+
+I still remember that night, the leaves falling. Do you?
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
+---
+id:
+IGNORE_VOICEMAIL_AND_TEXTS
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+*You think to yourself that they'll call your name any second. It's better to not let yourself get caught up in memory, in crafting responses. You will do that when you get home, you promise.*
+@
+actions:
+Glance up at ceiling -> LOOK_AT_CEILING
+Eavesdrop on receptionists -> LISTEN_TO_RECEPTIONIST
+---
+id:
+LOOK_AT_CEILING
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
+---
+id:
+LISTEN_TO_RECEPTIONIST
+ascci:
+		    
+	     .::::::::::.
+	    :::'        ':
+	  .::            :
+	 :  '    --    --:
+	 _\..    __   |  :
+	"    '. ////  --.'
+	       """\.__.'_ 
+			\  :. 	.""-._    	
+			:  '.   '.    :.""-._     
+		   '	:  .'        
+		  :	    '  '   
+		 :		:   
+				   
+@
+text:
+
+@
+actions:
+TODO -> TODO
+TODO -> TODO
+TODO -> TODO
 ---
