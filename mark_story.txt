@@ -74,20 +74,18 @@ Put phone back in pocket -> PUT_PHONE_BACK_IN_POCKET
 id:
 LISTEN_TO_NEW_VOICEMAIL
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::            :
-	 :  '    --    --:
-	 _\..    __   |  :
-	"    '. ////  --.'
-	       """\.__.'_ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+               _________   .:'::::::::::
+              |---'     "\':::::::::::::
+            ___\___.-.::::::::::::::::::
+           /      .:':::::::::::::::::::
+        __/_  /_:'::::::::::::::::::::::
+       " / / /':::::::::::::::::::::::::
+      / /_/_/:::::::::::__::::::::::::::
+     /-, /.....::::::::// \::::::::::::.
+    /_/_/........::::://__/::::::::.::' 
+         \.........::(    \::::::::'  \ 
+        __\\.........:\  //)__.:'      \
+       {   \\.........:|      \         
 @
 text:
 I press play and hold the phone up to my ear. A tinny automated voice of a woman says (**insert script here: - "Hi [Customer Name], this is [Name] from [Company]. I'm calling about your overdue invoice [Invoice Number] for $[Amount] due on [Due Date]. I wanted to see if there was a reason for the delay and how we might resolve this."**)
@@ -100,20 +98,18 @@ TODO -> TODO
 id:
 LISTEN_TO_OLD_VOICEMAIL
 ascci:
-		    
-	     .::::::::::.
-	    :::'        ':
-	  .::            :
-	 :  '    --    --:
-	 _\..    __   |  :
-	"    '. ////  --.'
-	       """\.__.'_ 
-			\  :. 	.""-._    	
-			:  '.   '.    :.""-._     
-		   '	:  .'        
-		  :	    '  '   
-		 :		:   
-				   
+               __________               
+              [  \____/  ]              
+              |          |              
+            __|  ------  | _.           
+            \_| [] [] [] |/ |           
+              |          |\ =\          
+            __| [[[[]]]] | \  |\.       
+            \ | [[[[]]]] |/'   )|       
+             _| [[[[]]]] (    '  \      
+             \| [[]]]]   |        )     
+              |__________:\       \     
+                ^^       \ ':.     \        	   
 @
 text:
 I can't bear to hear her mumbled and too-fast, staccato voice. I read the beginning of the transcript:
